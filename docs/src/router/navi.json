@@ -1,0 +1,27 @@
+[
+  {
+    "ref": "dashboard",
+    "text": "Dashboard",
+    "icon": "dashboard"
+  },
+  {
+    "ref": "tables",
+    "text": "Tables",
+    "icon": "table_view"
+  },
+  {
+    "ref": "billing",
+    "text": "Billing",
+    "icon": "receipt_long"
+  },
+  {
+    "ref": "subnational",
+    "text": "Subnational",
+    "icon": "map"
+  },
+  {
+    "ref": "notifications",
+    "text": "Notifications",
+    "icon": "notifications"
+  }
+]

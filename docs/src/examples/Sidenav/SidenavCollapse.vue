@@ -15,16 +15,11 @@
     @click="this.isExpanded = !this.isExpanded"
   >
     <div
-      class="text-center d-flex align-items-center justify-content-center"
-      :class="this.$store.state.isRTL ? ' ms-2' : 'me-2'"
+      class="text-center d-flex align-items-center justify-content-center me-2"
     >
       <slot name="icon"></slot>
     </div>
-    <span
-      class="nav-link-text"
-      :class="this.$store.state.isRTL ? ' me-1' : 'ms-1'"
-      >{{ navText }}</span
-    >
+    <span class="nav-link-text ms-1">{{ navText }}</span>
   </a>
   <div :class="isExpanded ? 'collapse show' : 'collapse'">
     <slot name="list"></slot>

@@ -4,55 +4,16 @@
     id="sidenav-collapse-main"
   >
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li class="nav-item" v-for="item in items" :key="item.ref">
         <sidenav-collapse
           url="#"
           :aria-controls="''"
           v-bind:collapse="false"
-          collapseRef="dashboard"
-          navText="Dashboard"
+          :collapseRef="item.ref"
+          :navText="item.text"
         >
           <template v-slot:icon>
-            <i class="material-icons-round opacity-10 fs-5">dashboard</i>
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="tables"
-          navText="Tables"
-        >
-          <template v-slot:icon>
-            <i class="material-icons-round opacity-10 fs-5">table_view</i>
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="billing"
-          navText="Billing"
-        >
-          <template v-slot:icon>
-            <i class="material-icons-round opacity-10 fs-5">receipt_long</i>
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="notifications"
-          navText="Notifications"
-        >
-          <template v-slot:icon>
-            <i class="material-icons-round opacity-10 fs-5">notifications</i>
+            <i class="material-icons-round opacity-10 fs-5">{{ item.icon }}</i>
           </template>
         </sidenav-collapse>
       </li>
@@ -61,6 +22,7 @@
 </template>
 <script>
 import SidenavCollapse from "./SidenavCollapse.vue";
+import navi from "../../router/navi.json";
 
 export default {
   name: "SidenavList",
@@ -68,10 +30,12 @@ export default {
     cardBg: String,
   },
   data() {
+    console.log(navi);
     return {
       title: "Soft UI Dashboard PRO",
       controls: "dashboardsExamples",
       isActive: "active",
+      items: navi,
     };
   },
   components: {
